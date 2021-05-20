@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>JS Ferdighet 2a</title>
+</head>
+<body onload="testOnLoad()">
+
+    <h2 id="info">bitch</h2>
+
+    <input id="keypress" type="text" onkeydown="keydown()" onkeyup="keyup()" />
+
+    <h5 id="dblclk" ondblclick="dblclk()">Bitchessss</h5>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"  target="_blank"><img src="https://dyrevern.no/app/uploads/2020/03/stor-elefant-og-liten-elefant-koser-ute-i-gresset-istock_000023385022large1-scaled.jpg" width="50%" height="50%" /></a>
+    <div oncontextmenu="contextMenu()" contextmenu="mymenu">
+
+        <h1>kachigga</h1>
+
+    </div>
+
+        <script>
+
+            function testOnLoad() {
+                document.getElementById('info').innerHTML += '<li>onload</li>';
+            }
+
+            function dblclk() {
+                document.getElementById('dblclk').innerHTML += '<ul>doubleclicked!</ul>';
+
+            }
+
+            function keydown() {
+                document.getElementById('keypress').style.backgroundColor = "red";
+            }
+
+            function keyup() {
+                document.getElementById('keypress').style.backgroundColor = "green";
+            }
+
+            function contextMenu() {
+                alert("my nigga");
+            }
+
+        </script>
+
+</body>
+</html>

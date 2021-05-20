@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+
+<body>
+    
+    <h1>Hvor mange hender har et menneske? </h1>
+    <h1 id="correct" style="color:green"></h1>
+    <h1 id="incorrect" style="color:red"></h1>
+    <h2 id="2" onclick="check(this.id)">To hender</h2>
+    <h2 onclick="check(this.id)">Tre hender</h2>
+    <h2 onclick="check(this.id)">Ingen hender</h2>
+    <script>
+
+        function check(checkValue) {
+
+            if (checkValue == "2") {
+                document.getElementById('correct').style.color = "green";
+                document.getElementById('correct').innerHTML = "Riktig!";
+
+            }
+            else {
+                document.getElementById('correct').style.color = "red";
+                document.getElementById('correct').innerHTML = "Feil!";
+            }
+        }
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

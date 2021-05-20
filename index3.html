@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <table style="font-size:50px";>
+        
+    <tr><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td></tr>
+    <tr onmouseover="mouseover(this)" onmouseout="mouseout(this)"><td>O</td><td>O</td><td>O</td><td>O</td></tr>
+    
+    </table>
+
+
+    <script>
+
+        function mouseover(changeO) {
+
+            changeO.innerHTML = 'X';
+            changeO.style.backgroundColor = "blue";
+
+        }
+
+        function mouseout(changeX) {
+
+            changeX.innerHTML = 'O'
+            changeX.style.backgroundColor = "red";
+            
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>
