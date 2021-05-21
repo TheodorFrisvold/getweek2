@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -36,7 +36,7 @@
             border: 5px solid black;
             vertical-align: middle;
             padding: 5vh;
-            font-size: 15vh;
+            font-size: 4vh;
         }
         
 
@@ -46,9 +46,7 @@
 <body>
 
     <!--<p>Ferdighet 4 - Variabel utenfor funksjon og innenfor funksjon, samt sette sammen tekst av flere deler</p>
-
     <button onclick="tell()">Tell!</button>
-
     <div id="info">Trykk på knappen!</div>-->
 
 
@@ -69,25 +67,52 @@
         <div onclick="clicked(this.id)" id="9" class="Knapp9">9</div>
         <div onclick="clicked(this.id)" id="0" class="Knapp0">0</div>
         <div onclick="reset(this.id)" id="reset" class="KnappReset">Reset</div>
-        <div onclick="erase(this.id)" id="erase" class="KnappErase"></div>
+        <div onclick="erase(this.id)" id="erase" class="KnappErase">Erase</div>
     </div>
 
 
     <script>
 
+        pwArray = [];
+        var htmlString = document.getElementById('output');
+
+        function erase()
+        {            
+            pwArray.pop();
+            UpdateOutput();
+        }
+
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
         function reset() {
-            document.getElementById('output').innerHTML = "Input:";
+            document.getElementById('output').innerHTML = "Input:";            
+            pwArray = [];
+
+            
+            UpdateOutput();
+        }
+
+        function UpdateOutput()
+        {
+            var pwString = '';
+                        
+            for (n = 0; n < pwArray.length; n++)
+            {
+                pwString += pwArray[n].toString();
+            }
+            
+            htmlString.innerHTML = "Input:" + pwString;
         }
 
         async function clicked(tall) {
 
-            var innerHTML = document.getElementById('output');
-            innerHTML.innerHTML += tall.toString();
-
-            if (innerHTML.innerHTML == "Input:420") {
+            pwArray.push(tall);
+            var pwString = '';
+            
+            UpdateOutput();
+        
+            if (htmlString.innerHTML == "Input:420") {
                 await sleep(5);
                 alert("Riktig!");
                 await sleep(500);
