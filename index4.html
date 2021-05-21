@@ -56,7 +56,8 @@
     <br />
     <br />
     <br />
-    <div style="font-size:5vh"class="output" id="output">Input:</div>
+    <p style="font-size:5vh">Input:</p>
+    <div style="font-size:5vh"class="output" id="output"></div>
     <div class="grid-container">
         <div onclick="clicked(this.id)" id="1" class="Knapp1">1</div>
         <div onclick="clicked(this.id)" id="2" class="Knapp2">2</div>
@@ -79,7 +80,7 @@
             return new Promise(resolve => setTimeout(resolve, ms));
         }
         function reset() {
-            document.getElementById('output').innerHTML = "Input:";
+            document.getElementById('output').innerHTML = "";
         }
 
         async function clicked(tall) {
@@ -87,7 +88,7 @@
             var innerHTML = document.getElementById('output');
             innerHTML.innerHTML += tall.toString();
 
-            if (innerHTML.innerHTML == "Input:420") {
+            if (innerHTML.innerHTML == "420") {
                 await sleep(5);
                 alert("Riktig!");
                 await sleep(500);

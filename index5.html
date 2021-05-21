@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #img {
+            height: 25%;
+            width: 25%;
+        }
+
+
+    </style>
+</head>
+<body onload="printOnLoad()">
+
+    <div><img src="https://wallpapercave.com/wp/wp6819293.jpg" id="img" /></div>
+    <div id="a"></div>
+
+    <br />
+    <br />
+    <br />
+
+    <div id="b"></div>
+
+
+
+<script>
+
+    document.getElementById('a').innerHTML = 'Under lasting av siden: ' + new Date().toTimeString();
+
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function printOnLoad() {
+        await sleep(2000);
+        document.getElementById('b').innerHTML = 'Etter lasting av siden: ' + new Date().toTimeString();
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
