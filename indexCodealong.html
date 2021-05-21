@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tilfeldige Tall</title>
+
+    <style>
+
+        body{
+
+            margin: 0;
+            padding: 0;
+        }
+        #tilfeldigtall {
+            font-size: 5vh;
+            background-color: antiquewhite;
+            width: 50%
+        }
+
+        button{
+            font-size: 6vh;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="tilfeldigtall">
+
+        4
+
+    </div>
+    <button onclick="randomNumberGenerator()">Click me for a random number!</button>
+
+
+    <script>
+
+        var randomNumber = 100;
+
+        function randomNumberGenerator() {
+
+            randomnumber = Math.floor(Math.random() * 1000);
+            document.getElementById('tilfeldigtall').innerHTML = randomnumber;
+
+
+        }
+
+    </script>
+
+
+</body>
+</html>

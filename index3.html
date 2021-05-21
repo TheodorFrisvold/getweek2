@@ -5,26 +5,58 @@
     <meta charset="utf-8" />
     <title></title>
 </head>
-<body>
+<body onload=TableGen()>
 
-    <table style="font-size:50px";>
-        
-    <tr><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td><td onmouseover="mouseover(this)" onmouseout="mouseout(this)">O</td></tr>
-    <tr onmouseover="mouseover(this)" onmouseout="mouseout(this)"><td>O</td><td>O</td><td>O</td><td>O</td></tr>
-    
-    </table>
+
+    <table id="table" style="font-size:50px">
+
+        <tr><td onmouseover="MouseOver(this)" onmouseout="MouseOut(this)">O</td></tr>
+
+    </table>    
+
 
 
     <script>
 
-        function mouseover(changeO) {
+        function TableGen() {
+
+            var table = document.getElementById("table");
+            
+            const htmlString = `<td onmouseover="MouseOver(this)" onmouseout="MouseOut(this)">O</td>`;
+            var finalHtmlString;
+
+            var size = 100;
+
+            for (y = 0; y < size; y++)
+            {  
+                finalHtmlString = '<tr>';
+
+                for (x = 0; x < size; x++)
+                {
+                    finalHtmlString += htmlString;
+                }               
+                
+                finalHtmlString += '</tr>';
+
+                table.innerHTML += finalHtmlString;
+            }
+        }
+        
+
+
+
+        
+
+
+
+        function MouseOver(changeO) {
 
             changeO.innerHTML = 'X';
             changeO.style.backgroundColor = "blue";
 
         }
 
-        function mouseout(changeX) {
+        function MouseOut(changeX) {
 
             changeX.innerHTML = 'O'
             changeX.style.backgroundColor = "red";

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ferdighet 04</title>
+
+
+    <style>
+        .grid-container {
+            display: grid;
+            text-align: center;
+            grid-template-columns: 15vh 15vh 15vh;
+            grid-template-rows: 15vh 15vh 15vh;
+            grid-template-areas: "Knapp1 Knapp2 Knapp3"
+                                 "Knapp4 Knapp5 Knapp6"
+                                 "Knapp7 Knapp8 Knapp9"
+                                 "KnappReset Knapp0 KnappErase";
+        }
+        .Knapp1, .Knapp2, .Knapp3, .Knapp4, .Knapp5, .Knapp6, .Knapp7, .Knapp8, .Knapp9, .Knapp0 {
+            background-color: blue;
+            border: 5px solid black;
+            vertical-align: middle;
+            padding: 5vh;
+            font-size: 8vh;
+        }        
+        .KnappReset {
+            background-color: blue;
+            border: 5px solid black;
+            vertical-align: middle;
+            padding: 5vh;
+            font-size: 3vh;
+        }
+        .KnappErase {
+            background-color: blue;
+            border: 5px solid black;
+            vertical-align: middle;
+            padding: 5vh;
+            font-size: 15vh;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+
+    <p>Ferdighet 4 - Variabel utenfor funksjon og innenfor funksjon, samt sette sammen tekst av flere deler</p>
+
+    <button onclick="tell()">Tell!</button>
+
+    <div id="info">Trykk på knappen!</div>
+
+
+
+    <br />
+    <br />
+    <br />
+    <div style="font-size:5vh"class="output" id="output">Input:</div>
+    <div class="grid-container">
+        <div onclick="clicked(this.id)" id="1" class="Knapp1">1</div>
+        <div onclick="clicked(this.id)" id="2" class="Knapp2">2</div>
+        <div onclick="clicked(this.id)" id="3" class="Knapp3">3</div>
+        <div onclick="clicked(this.id)" id="4" class="Knapp4">4</div>
+        <div onclick="clicked(this.id)" id="5" class="Knapp5">5</div>
+        <div onclick="clicked(this.id)" id="6" class="Knapp6">6</div>
+        <div onclick="clicked(this.id)" id="7" class="Knapp7">7</div>
+        <div onclick="clicked(this.id)" id="8" class="Knapp8">8</div>
+        <div onclick="clicked(this.id)" id="9" class="Knapp9">9</div>
+        <div onclick="clicked(this.id)" id="0" class="Knapp0">0</div>
+        <div onclick="reset(this.id)" id="reset" class="KnappReset">Reset</div>
+        <div onclick="erase(this.id)" id="erase" class="KnappErase"></div>
+
+    </div>
+
+
+    <script>
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        function reset(id) {
+            document.getElementById('output').innerHTML = "Input:";
+        }
+
+        function erase(id) {
+            
+        }
+
+
+        async function clicked(id) {
+
+            var innerHTML = document.getElementById('output');
+            innerHTML.innerHTML += id.toString();
+
+            if (innerHTML.innerHTML == "Input:420") {
+                await sleep(5);
+                alert("Riktig!");
+            }
+
+            
+        }
+
+
+
+
+
+
+        var tallA = 0;
+        var tekstA = 'TekstA';
+        console.log(tallA, tekstA);
+
+        function tell() {
+            var tallB = 0;
+            var tekstB = 'TekstB';
+
+            tallA++;
+            tallB++;
+            tekstA += '*';
+            tekstB += '*';
+
+            document.getElementById('info').innerHTML =
+                'TallA=' + tallA +
+                '<br/>TallB=' + tallB +
+                '<br/>TekstA=' + tekstA +
+                '<br/>TekstB=' + tekstB;
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
