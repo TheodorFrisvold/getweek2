@@ -70,7 +70,6 @@
         <div onclick="clicked(this.id)" id="0" class="Knapp0">0</div>
         <div onclick="reset(this.id)" id="reset" class="KnappReset">Reset</div>
         <div onclick="erase(this.id)" id="erase" class="KnappErase"></div>
-
     </div>
 
 
@@ -79,27 +78,31 @@
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
-        function reset(id) {
+        function reset() {
             document.getElementById('output').innerHTML = "Input:";
         }
 
-        function erase(id) {
-            
-        }
-
-
-        async function clicked(id) {
+        async function clicked(tall) {
 
             var innerHTML = document.getElementById('output');
-            innerHTML.innerHTML += id.toString();
+            innerHTML.innerHTML += tall.toString();
 
             if (innerHTML.innerHTML == "Input:420") {
                 await sleep(5);
                 alert("Riktig!");
+                await sleep(500);
+                reset();
             }
 
             
         }
+
+
+
+
+
+
+
 
 
 
