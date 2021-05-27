@@ -1,0 +1,27 @@
+﻿﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Ferdighet 7 - Sette variabel til resultat av et regnestykke. </p>
+    <input id="divBredde" type="range" min="1" max="1000" step="1" oninput="divDims()" value="100" />
+    <input id="divHøyde" type="range" min="1" max="1000" step="1" oninput="divDims()" value="100" />
+
+    <div id="divOut"></div>
+    <script>
+        var divOut = document.getElementById('divOut');
+        var tallAInput = document.getElementById('tallA');
+        var tallBInput = document.getElementById('tallB');
+
+        divDims();
+
+        function divDims() {
+            
+        }
+    </script>
+</body>
+</html>
