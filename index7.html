@@ -8,20 +8,57 @@
 </head>
 <body>
     <p>Ferdighet 7 - Sette variabel til resultat av et regnestykke. </p>
-    <input id="divBredde" type="range" min="1" max="1000" step="1" oninput="divDims()" value="100" />
-    <input id="divHøyde" type="range" min="1" max="1000" step="1" oninput="divDims()" value="100" />
+    <input id="divWidth" type="range" min="1" max="1000" step="1" oninput="divDims()" value="100" />
+    <input id="divHeight" type="range" min="1" max="1000" step="1" oninput="divDims()" value="100" />
 
     <div id="divOut"></div>
     <script>
         var divOut = document.getElementById('divOut');
-        var tallAInput = document.getElementById('tallA');
-        var tallBInput = document.getElementById('tallB');
+        var divWidth = document.getElementById('divWidth');
+        var divHeight = document.getElementById('divHeight');
+        //var tallAInput = document.getElementById('tallA');
+        //var tallBInput = document.getElementById('tallB');
+       
 
         divDims();
+/*        Lag en slider for å velge bredde fra 1 til 1000 og en slider for å velge høyde fra 1 til 1000.
+ *        Vis en div med valgt bredde og høyde - 
+ *        og legg inn tekst i diven som viser arealet(bredde * høyde) og omkretsen(2 * bredde + 2 * høyde).*/
 
         function divDims() {
-            
+            var Høyde = parseInt(divHeight.value);
+            var Bredde = parseInt(divWidth.value);
+            var Omkrets = 2 * Bredde + 2 * Høyde;
+
+            divOut.innerHTML = '<div style="'
+                + 'background-color: blue;'
+                + 'width: ' + divWidth.value + 'px;'
+                + 'height: ' + divHeight.value + 'px;'
+                + '">'
+                + 'Areal: ' + divWidth.value * divHeight.value
+                + '<br />'
+                + ' Omkrets: ' + Omkrets
+                + '</div>';
         }
+
+
+
+
+
+        //function showDiv() {
+        //    resultatDiv.innerHTML = '<div style="'
+        //        + 'background-color: ' + colorChooser.value + ';'
+        //        + 'width: ' + sizeSlider.value + 'px;'
+        //        + 'height: ' + sizeSlider.value + 'px;'
+        //        + 'border-style: solid;'
+        //        + 'border-radius: ' + divBorderRadius.value + '%;'
+        //        + 'border-width: ' + divBorderWidth.value + 'px;'
+        //        + 'border-color: ' + borderColor.value + ';'
+        //        + '">' +
+        //        textInput.value + '</div>';
+        //    resultatHtmlDiv.innerText = resultatDiv.innerHTML;
+        //}
+
     </script>
 </body>
 </html>
