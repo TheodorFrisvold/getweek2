@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<!--Oppgave
+Lag en webside som viser en div med tilfeldig bredde, høyde og border-størrelse. Vis i tillegg som tekst hvilke tilfeldige verdier som brukes.-->
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,7 +8,35 @@
     <title></title>
 </head>
 <body>
+    <h1>Ferdighet 7a - Sette variabel til tilfeldig tall</h1>
+    <h3 id="values"></h3>
+    <div id="box"></div>
 
+    <script>
+        randomBox()
 
+        function randomBox() {
+            var boxHeight = Math.floor(100 + Math.random() * 1000);
+            var boxWidth = Math.floor(100 + Math.random() * 1000);
+            var borderWidth = Math.floor(10 + Math.random() * 100);
+            var borderRadius = Math.floor(1 + Math.random() * 50);
+            var randomBox = document.getElementById('box');
+            var values = document.getElementById('values');
+            var randomColor = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+            var randomColor2 = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+
+            randomBox.innerHTML = '<div style="'
+                + 'background-color: ' + randomColor + ';'
+                + 'height: ' + boxHeight + 'px;'
+                + 'width: ' + boxWidth + 'px;'
+                + 'border: solid;'
+                + 'border-color: ' + randomColor2 + ';'
+                + 'border-width: ' + borderWidth + 'px;'
+                + 'border-radius: ' + borderRadius + '%;'
+                + '"></div>';
+            values.innerText = randomBox.innerHTML; 
+        }
+
+    </script>
 </body>
 </html>

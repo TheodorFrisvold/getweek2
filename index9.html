@@ -1,0 +1,66 @@
+﻿﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .round {
+            border: 5px solid gray;
+            border-radius: 5px;
+        }
+        .d1, .d2, .d3, .d4, .d5{
+            height: 10vh;
+            width: 100%;
+            border-width: 1vh;
+            border-style: solid;
+            border-color: darkblue;
+            border-top-width: 0px;
+        }
+
+        .d1 {
+            background-color: blue;
+            border-top-width: 1vh;
+        }
+        .d2 {
+            background-color: red;
+        }
+        .d3 {
+            background-color: lime;
+        }
+        .d4 {
+            background-color: deeppink;
+        }
+        .d5 {
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body style="padding: 0px; margin: 0px;">
+    <h1>Ferdighet 8 - Endre andre ting enn innerHTML: value, style</h1>
+
+
+    <input id="chk" type="checkbox" onchange="toggleStyle0()" style="transform: scale(5); margin: 5vh;" />
+    <input id="chk" type="checkbox" onchange="toggleStyle1()" style="transform: scale(5); margin: 5vh;" />
+    <input id="chk" type="checkbox" onchange="toggleStyle2()" style="transform: scale(5); margin: 5vh;" />
+    <input id="chk" type="checkbox" onchange="toggleStyle3()" style="transform: scale(5); margin: 5vh;" />
+    <input id="chk" type="checkbox" onchange="toggleStyle4()" style="transform: scale(5); margin: 5vh;" />
+    
+    <div id="div1" class="d1">Bla bla bla</div>
+    <div id="div2" class="d2">Bla bla bla</div>
+    <div id="div3" class="d3">Bla bla bla</div>
+    <div id="div4" class="d4">Bla bla bla</div>
+    <div id="div5" class="d5">Bla bla bla</div>
+    
+    <script>
+        function toggleStyle0() {
+            var isChecked = document.getElementById('chk').checked;
+            document.getElementById('bla').classList.toggle('round', isChecked);
+        }
+
+
+    </script>
+</body>
+</html>
+
